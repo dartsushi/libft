@@ -6,7 +6,7 @@
 /*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 22:21:21 by Atsushi           #+#    #+#             */
-/*   Updated: 2022/04/22 16:04:17 by Atsushi          ###   ########.fr       */
+/*   Updated: 2022/04/27 20:57:04 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int	pos[2];
 	int	i;
 
-	if (s1 == NULL)
+	if (s1 == NULL || set == NULL)
 		return (NULL);
 	i = 0;
 	while (is_instr(s1[i], set) && s1[i] != '\0')

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aueda <aueda@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 22:44:57 by Atsushi           #+#    #+#             */
-/*   Updated: 2022/04/18 20:18:40 by aueda            ###   ########.fr       */
+/*   Updated: 2022/04/27 21:21:19 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,25 @@ void	zero_array(int arr[4])
 	arr[3] = 0;
 }
 
-void	count_pos(char const *s, int *i, char c)
+void	store_words(char const *s, int *i, char c, char **s_list)
 {
+	while (s[i[2]] == c)
+		i[2]++;
+	i[3] = i[2];
 	while (s[i[2]] != c && s[i[2]] != '\0')
 	{
 		i[1]++;
 		i[2]++;
 	}
+	s_list[i[0]] = ft_substr(s, i[3], i[1]);
 }
 
-void	skip_c(char const *s, int *i, char c)
+void	free_slist(char **s_list, int i)
 {
-	while (s[i[2]] == c)
-		i[2]++;
+	i += 1;
+	while (i--)
+		free(s_list[i - 1]);
+	free(s_list);
 }
 
 char	**ft_split(char const *s, char c)
@@ -69,13 +75,10 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (i[0] < (count_words(s, c)))
 	{
-		skip_c(s, i, c);
-		i[3] = i[2];
-		count_pos(s, i, c);
-		s_list[i[0]] = ft_substr(s, i[3], i[1]);
+		store_words(s, i, c, s_list);
 		if (s_list[i[0]] == NULL)
 		{
-			free(s_list);
+			free_slist(s_list, i[0]);
 			return (NULL);
 		}
 		i[0]++;

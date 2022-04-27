@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aueda <aueda@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:46:53 by aueda             #+#    #+#             */
-/*   Updated: 2022/04/14 17:05:16 by aueda            ###   ########.fr       */
+/*   Updated: 2022/04/27 20:56:26 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*str_conv;
 
 	i = 0;
-	if (s == NULL)
+	if (s == NULL || f == NULL)
 		return (NULL);
 	str_conv = (char *) malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (str_conv == NULL)

@@ -6,7 +6,7 @@
 /*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:47:05 by Atsushi           #+#    #+#             */
-/*   Updated: 2022/04/22 15:36:07 by Atsushi          ###   ########.fr       */
+/*   Updated: 2022/04/27 20:54:48 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (substr == NULL)
 		return (NULL);
 	if (start >= ft_strlen(s))
+	{
+		substr[0] = '\0';
 		return (substr);
+	}
 	while (pos < len + start && s[pos] != '\0')
 	{
 		substr[pos - start] = s[pos];

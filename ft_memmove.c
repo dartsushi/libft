@@ -6,7 +6,7 @@
 /*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:04:39 by aueda             #+#    #+#             */
-/*   Updated: 2022/04/16 14:25:42 by Atsushi          ###   ########.fr       */
+/*   Updated: 2022/04/27 16:05:29 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	dst_cast = (unsigned char *)dst;
 	src_cast = (unsigned char *)src;
 	if (dst_cast < src_cast)
-	{
-		while (len--)
-			*dst_cast++ = *src_cast++;
-	}
+		return (ft_memcpy(dst, src, len));
 	else
 	{
 		dst_cast += len - 1;

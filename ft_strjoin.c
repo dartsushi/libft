@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aueda <aueda@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 22:02:57 by Atsushi           #+#    #+#             */
-/*   Updated: 2022/04/18 17:03:56 by aueda            ###   ########.fr       */
+/*   Updated: 2022/04/27 20:55:16 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	s12len[2];
 	size_t	i;
 
-	if (s1 == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 	i = 0;
 	s12len[0] = ft_strlen(s1);
