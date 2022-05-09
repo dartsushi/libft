@@ -6,7 +6,7 @@
 /*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:46:53 by aueda             #+#    #+#             */
-/*   Updated: 2022/04/27 20:56:26 by Atsushi          ###   ########.fr       */
+/*   Updated: 2022/05/09 17:43:05 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	char	*str_conv;
+	unsigned int	i;
+	char			*str_conv;
 
 	i = 0;
 	if (s == NULL || f == NULL)

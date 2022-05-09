@@ -6,18 +6,18 @@
 /*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 13:45:43 by aueda             #+#    #+#             */
-/*   Updated: 2022/04/28 07:29:41 by Atsushi          ###   ########.fr       */
+/*   Updated: 2022/05/09 17:12:09 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_digit(int n)
+static int	count_digit(int n)
 {
 	int	digit;
 
 	digit = 1;
-	if (n == -INT_MIN)
+	if (n == INT_MIN)
 		return (11);
 	if (n < 0)
 	{
@@ -32,7 +32,7 @@ int	count_digit(int n)
 	return (digit);
 }
 
-int	negative_func(int n, char *num)
+static int	negative_func(int n, char *num)
 {
 	num[0] = '-';
 	return (-n);
@@ -69,6 +69,7 @@ char	*ft_itoa(int n)
 // {
 // 	printf("%s\n",ft_itoa(-1234567));
 // 	printf("%s\n",ft_itoa(-0));
-// 	printf("%s\n",ft_itoa(-2147483648));
+// 	printf("%s\n",ft_itoa(INT_MIN));
+// 	printf("%d\n",INT_MIN);
 // 	return (0);
 // }

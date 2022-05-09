@@ -6,21 +6,21 @@
 /*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 19:41:37 by aueda             #+#    #+#             */
-/*   Updated: 2022/04/28 12:01:12 by Atsushi          ###   ########.fr       */
+/*   Updated: 2022/05/09 17:55:57 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #define LONG_MAX_DIGITS 19
 
-int	ft_isspace(char c)
+static int	ft_isspace(char c)
 {
 	if (c == 32 || (9 <= c && c <= 13))
 		return (TRUE);
 	return (FALSE);
 }
 
-int	is_overflow_max(int ndigits, int sgn, unsigned long val, char c)
+static int	is_overflow_max(int ndigits, int sgn, unsigned long val, char c)
 {
 	if (ndigits == LONG_MAX_DIGITS + 1 && ft_isdigit(c) && sgn == 1)
 		return (TRUE);
@@ -28,8 +28,7 @@ int	is_overflow_max(int ndigits, int sgn, unsigned long val, char c)
 		return (TRUE);
 	return (FALSE);
 }
-
-int	is_overflow_min(int ndigits, int sgn, unsigned long val, char c)
+static int	is_overflow_min(int ndigits, int sgn, unsigned long val, char c)
 {
 	if (ndigits == LONG_MAX_DIGITS + 1 && ft_isdigit(c) && sgn == -1)
 		return (TRUE);

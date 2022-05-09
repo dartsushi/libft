@@ -6,16 +6,16 @@
 /*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 22:44:57 by Atsushi           #+#    #+#             */
-/*   Updated: 2022/04/28 07:42:48 by Atsushi          ###   ########.fr       */
+/*   Updated: 2022/05/09 17:57:25 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_words(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
-	int	i;
-	int	num;
+	size_t	i;
+	size_t	num;
 
 	i = 0;
 	num = 0;
@@ -33,7 +33,7 @@ int	count_words(char const *s, char c)
 	return (num);
 }
 
-void	zero_array(int arr[4])
+static void	zero_array(size_t arr[4])
 {
 	arr[0] = 0;
 	arr[1] = 0;
@@ -41,7 +41,7 @@ void	zero_array(int arr[4])
 	arr[3] = 0;
 }
 
-void	store_words(char const *s, int *i, char c, char **s_list)
+static void	store_words(char const *s, size_t *i, char c, char **s_list)
 {
 	while (s[i[2]] == c)
 		i[2]++;
@@ -54,7 +54,7 @@ void	store_words(char const *s, int *i, char c, char **s_list)
 	s_list[i[0]] = ft_substr(s, i[3], i[1]);
 }
 
-void	free_slist(char **s_list, int i)
+static void	free_slist(char **s_list, size_t i)
 {
 	i ++;
 	while (i--)
@@ -65,7 +65,7 @@ void	free_slist(char **s_list, int i)
 char	**ft_split(char const *s, char c)
 {
 	char	**s_list;
-	int		i[4];
+	size_t	i[4];
 
 	if (s == NULL)
 		return (NULL);
