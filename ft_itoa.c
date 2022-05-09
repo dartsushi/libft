@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aueda <aueda@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 13:45:43 by aueda             #+#    #+#             */
-/*   Updated: 2022/04/18 17:11:57 by aueda            ###   ########.fr       */
+/*   Updated: 2022/04/28 07:29:41 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	count_digit(int n)
 	int	digit;
 
 	digit = 1;
-	if (n == -2147483648)
+	if (n == -INT_MIN)
 		return (11);
 	if (n < 0)
 	{
@@ -50,7 +50,7 @@ char	*ft_itoa(int n)
 	num[idx--] = '\0';
 	if (n == 0)
 		num[0] = '0';
-	if (n == -2147483648)
+	if (n == INT_MIN)
 	{
 		num[idx--] = '8';
 		n = -214748364;

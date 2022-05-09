@@ -6,36 +6,37 @@
 /*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 19:41:37 by aueda             #+#    #+#             */
-/*   Updated: 2022/04/27 16:27:58 by Atsushi          ###   ########.fr       */
+/*   Updated: 2022/04/28 12:01:12 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#define LONG_MAX_DIGITS 19
 
 int	ft_isspace(char c)
 {
 	if (c == 32 || (9 <= c && c <= 13))
-		return (1);
-	return (0);
+		return (TRUE);
+	return (FALSE);
 }
 
-int	is_overflow(int ndigits, int sgn, unsigned long val, char c)
+int	is_overflow_max(int ndigits, int sgn, unsigned long val, char c)
 {
-	if (ndigits == 20 && ft_isdigit(c) && sgn == 1)
-		return (1);
-	else if (ndigits == 20 && val / LONG_MAX == 1 && sgn == 1)
-		return (1);
-	return (0);
+	if (ndigits == LONG_MAX_DIGITS + 1 && ft_isdigit(c) && sgn == 1)
+		return (TRUE);
+	else if (ndigits == LONG_MAX_DIGITS + 1 && val / LONG_MAX == 1 && sgn == 1)
+		return (TRUE);
+	return (FALSE);
 }
 
-int	is_underflow(int ndigits, int sgn, unsigned long val, char c)
+int	is_overflow_min(int ndigits, int sgn, unsigned long val, char c)
 {
-	if (ndigits == 20 && ft_isdigit(c) && sgn == -1)
-		return (1);
-	else if (ndigits == 20 && \
+	if (ndigits == LONG_MAX_DIGITS + 1 && ft_isdigit(c) && sgn == -1)
+		return (TRUE);
+	else if (ndigits == LONG_MAX_DIGITS + 1 && \
 val / ((unsigned long) LONG_MAX + 1) == 1 && sgn == -1)
-		return (1);
-	return (0);
+		return (TRUE);
+	return (FALSE);
 }
 
 int	ft_atoi(const char *str)
@@ -57,13 +58,13 @@ int	ft_atoi(const char *str)
 	while (*nums == '0')
 		nums++;
 	ndigits = 0;
-	while (ndigits++ < 19 && ft_isdigit(*nums))
+	while (ndigits++ < LONG_MAX_DIGITS && ft_isdigit(*nums))
 		val = val * 10 + (unsigned long)(*nums++ - '0');
-	if (is_overflow(ndigits, sgn, val, *nums))
+	if (is_overflow_max(ndigits, sgn, val, *nums))
 		return ((int) LONG_MAX);
-	if (is_underflow(ndigits, sgn, val, *nums))
+	if (is_overflow_min(ndigits, sgn, val, *nums))
 		return ((int) LONG_MIN);
-	return ((int)(val * sgn));
+	return ((int)((long) val * sgn));
 }
 // #include <stdio.h>
 // int	main(void)

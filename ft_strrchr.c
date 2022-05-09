@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aueda <aueda@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 16:56:49 by aueda             #+#    #+#             */
-/*   Updated: 2022/04/14 14:38:42 by aueda            ###   ########.fr       */
+/*   Updated: 2022/04/28 08:34:52 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 
 	last_appear = NULL;
 	ss = (char *) s;
-	if (c == 0)
+	if ((char) c == '\0')
 		return (ss + ft_strlen(s));
 	else
 	{
@@ -36,8 +36,10 @@ char	*ft_strrchr(const char *s, int c)
 // #include <stdio.h>
 // int main(void)
 // {
-// 	const char s[] = "ABCDECFG";
-// 	int c = 'C';
+// 	// const char s[] = "ABCDECFG";
+// 	// int c = 'C';
+// 	const char s[] = "\0";
+// 	int c = -256;
 // 	printf("Difference: %d\n",(int) (strrchr(s,c)-ft_strrchr(s,c)));
 // 	printf("%s\n",ft_strrchr(s,c));
 // }

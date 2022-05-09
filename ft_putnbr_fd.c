@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aueda <aueda@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 17:22:52 by aueda             #+#    #+#             */
-/*   Updated: 2022/04/13 17:37:17 by aueda            ###   ########.fr       */
+/*   Updated: 2022/04/28 07:32:03 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n == -2147483648)
+	if (n == INT_MIN)
 	{
 		ft_putnbr_fd(-214748364, fd);
 		ft_putchar_fd('8', fd);

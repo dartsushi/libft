@@ -6,7 +6,7 @@
 /*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 18:31:12 by aueda             #+#    #+#             */
-/*   Updated: 2022/04/24 20:48:03 by Atsushi          ###   ########.fr       */
+/*   Updated: 2022/04/28 07:44:23 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	coincide_condition(char *str, char *to_find, size_t i[3])
 {
 	if (str[i[0] + i[1]] == to_find[i[1]] && str[i[0] + i[1]] != '\0' \
 		&& to_find[i[1]] != '\0' && i[0] + i[1] < i[2])
-		return (1);
-	return (0);
+		return (TRUE);
+	return (FALSE);
 }
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)

@@ -6,7 +6,7 @@
 /*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 22:21:21 by Atsushi           #+#    #+#             */
-/*   Updated: 2022/04/27 20:57:04 by Atsushi          ###   ########.fr       */
+/*   Updated: 2022/04/28 07:45:18 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if ((size_t) i == ft_strlen(s1))
 		return (ft_substr(s1, 0, 0));
 	i = ft_strlen(s1) - 1;
-	while (is_instr(s1[i], set) && i >= 0)
+	while (is_instr(s1[i], set) && 0 <= i)
 		i--;
 	pos[1] = i;
 	return (ft_substr(s1, pos[0], pos[1] - pos[0] + 1));

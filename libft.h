@@ -6,12 +6,14 @@
 /*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 16:31:59 by aueda             #+#    #+#             */
-/*   Updated: 2022/04/24 16:34:41 by Atsushi          ###   ########.fr       */
+/*   Updated: 2022/04/28 07:46:14 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define TRUE 1
+# define FALSE 0
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>

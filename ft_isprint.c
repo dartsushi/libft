@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aueda <aueda@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 20:29:57 by aueda             #+#    #+#             */
-/*   Updated: 2022/04/05 20:35:12 by aueda            ###   ########.fr       */
+/*   Updated: 2022/04/28 07:27:12 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
 	if (32 <= c && c <= 126)
-		return (1);
+		return (TRUE);
 	else
-		return (0);
+		return (FALSE);
 }
 // #include <stdio.h>
 // #include <ctype.h>

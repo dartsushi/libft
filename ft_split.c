@@ -6,7 +6,7 @@
 /*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 22:44:57 by Atsushi           #+#    #+#             */
-/*   Updated: 2022/04/27 21:21:19 by Atsushi          ###   ########.fr       */
+/*   Updated: 2022/04/28 07:42:48 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	store_words(char const *s, int *i, char c, char **s_list)
 
 void	free_slist(char **s_list, int i)
 {
-	i += 1;
+	i ++;
 	while (i--)
 		free(s_list[i - 1]);
 	free(s_list);
