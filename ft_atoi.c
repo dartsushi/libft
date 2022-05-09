@@ -6,7 +6,7 @@
 /*   By: Atsushi <Atsushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 19:41:37 by aueda             #+#    #+#             */
-/*   Updated: 2022/05/09 17:55:57 by Atsushi          ###   ########.fr       */
+/*   Updated: 2022/05/09 18:42:03 by Atsushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static int	is_overflow_max(int ndigits, int sgn, unsigned long val, char c)
 		return (TRUE);
 	return (FALSE);
 }
+
 static int	is_overflow_min(int ndigits, int sgn, unsigned long val, char c)
 {
 	if (ndigits == LONG_MAX_DIGITS + 1 && ft_isdigit(c) && sgn == -1)
